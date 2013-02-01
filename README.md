@@ -12,16 +12,16 @@ type "make" to compile
 Usage
 =====
 Copy the compiled dynamic library using ftp or scp e.g:
-	desktop $ scp ./touchHook.dylib root@<IP address of phone>:/usr/lib/touchHook.dylib
+    desktop $ scp ./touchHook.dylib root@<IP address of phone>:/usr/lib/touchHook.dylib
 
 send the following command using ssh to the device e.g:
-	desktop $ ssh root@<IP address of phone> 
+    desktop $ ssh root@<IP address of phone> 
 Register the environmental value:
- 	iDevice# launchctl setenv DYLD_INSERT_LIBRARIES "/usr/lib/touchHook.dylib"
+    iDevice# launchctl setenv DYLD_INSERT_LIBRARIES "/usr/lib/touchHook.dylib"
 
 Run an application and start touching the screen, the status bar at the top should change color or move (may require a few touches for it to work)
 
 I recommend disabling the hook library after use:
-	iDevice# launchctl setenv DYLD_INSERT_LIBRARIES ""
+    iDevice# launchctl setenv DYLD_INSERT_LIBRARIES ""
 
 
