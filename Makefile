@@ -10,7 +10,7 @@ THEOS=/Users/peterfillmore/dev/theos/include
 CC=$(PLATFORM)/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 
 LD=$(PLATFORM)/usr/bin/ld
 
-CFLAGS= -Wall -isysroot $(SDK) -framework Foundation -framework UIKit -lobjc -fPIC -I../include -I$(THEOS) 
+CFLAGS= -Wall -isysroot $(SDK) -framework Foundation -framework UIKit -lobjc -fPIC -I../include  
 LDFLAGS=-dylib -lsystem -lobjc -framework Foundation -framework UIKit -syslibroot $(SDK)
 
 MACOSX=$(DEVELOPER)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks
