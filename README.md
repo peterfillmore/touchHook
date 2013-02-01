@@ -11,12 +11,17 @@ type "make" to compile
 
 Usage
 =====
-This example uses the "Stocks.app" that comes with iOS.
-copy the compiled dynamic library using scp:
-desktop $ scp ./touchHook.dylib root@<IP address of phone>:/Applications/Stocks.app/touchHook.dylib
+Copy the compiled dynamic library using ftp or scp e.g:
+	desktop $ scp ./touchHook.dylib root@<IP address of phone>:/usr/lib/touchHook.dylib
 
-Insert the library:
- desktop $ ssh root@<IP address of phone> export DYLD_INSERT_LIBRARIES=/Applications/Stocks.app/touchHook.dylib
+send the following command using ssh to the device e.g:
+	desktop $ ssh root@<IP address of phone> 
+Register the environmental value:
+ 	iDevice# launchctl setenv DYLD_INSERT_LIBRARIES "/usr/lib/touchHook.dylib"
 
-Run the App
+Run an application and start touching the screen, the status bar at the top should change color or move (may require a few touches for it to work)
+
+I recommend disabling the hook library after use:
+	iDevice# launchctl setenv DYLD_INSERT_LIBRARIES ""
+
 
